@@ -48,7 +48,7 @@ class CalcAverage():
     print "Lsum="+str(values.left_forward+values.left_side)+" , Rsum="+str(values.right_side+values.right_forward)
     print "from aft"
 
-    if(rospy.Time.now().to_sec() - self.last_time.to_sec() >= 1.0):
+    if(rospy.Time.now().to_sec() - self.last_time.to_sec() >= 4.0):
       self.cmd.angular.z = 0.0
       self.cmd.linear.x = 0.0
       self.pub_cmd_vel_con.publish(self.cmd)
